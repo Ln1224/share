@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input, button { font-size: 1.2em; padding: 10px; margin: 10px; }
+        .result { margin-top: 20px; font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>Anarchist sharing pot</h1>
+    <form method="POST" action="/calculate">
+        <input type="number" step="0.01" name="value" required placeholder="How much babe?" value="{{ value or '' }}">
+        <button type="submit">Tell me</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p>Lu : {{ result['Lu'] }}</p>
+        <p>San : {{ result['San'] }}</p>
+        <p>Hel : {{ result['Hel'] }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
